@@ -6,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace CoffeeShopConsoleAppNet60
 {
-    internal class Latte : Coffee
+    internal class Latte : Coffee, IMilk
     {
+        public int mlMilk()
+        {
+            return 200;        
+        }
+
         public override int Price()
         {
             return 40;
