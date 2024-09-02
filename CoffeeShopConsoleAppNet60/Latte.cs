@@ -8,6 +8,10 @@ namespace CoffeeShopConsoleAppNet60
 {
     internal class Latte : Coffee, IMilk
     {
+        public Latte(int discount) : base(discount)
+        {
+        }
+
         public int mlMilk()
         {
             return 200;        
@@ -15,7 +19,11 @@ namespace CoffeeShopConsoleAppNet60
 
         public override int Price()
         {
-            return 40;
+            if (Discount > 5)
+            {
+                throw new Exception("Discount too high");
+            }
+            return 40 - Discount;
         }
         public override string Strength()
         {

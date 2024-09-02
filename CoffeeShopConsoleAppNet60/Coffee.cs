@@ -8,10 +8,21 @@ namespace CoffeeShopConsoleAppNet60
 {
     public abstract class Coffee
     {
+        public int Discount { get; set; }
+
+        protected Coffee(int discount)
+        {
+            Discount = discount;
+        }
 
         public virtual int Price()
         {
-            return 20;
+            if (Discount > 5)
+            {
+                throw new Exception("Discount too high");
+            }
+
+            return 20-Discount;
         }
 
         public abstract string Strength();
