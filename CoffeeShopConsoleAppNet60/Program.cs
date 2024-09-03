@@ -3,9 +3,9 @@ using CoffeeShopConsoleAppNet60;
 
 Console.WriteLine("Hello, World!");
 
-Coffee c1 = new BlackCoffee();
-Coffee c2 = new Cortado();
-Coffee c3 = new Latte();
+Coffee c1 = new BlackCoffee(0);
+Coffee c2 = new Cortado(0);
+Coffee c3 = new Latte(0);
 
 List<Coffee> CoffeeList  = new List<Coffee>();
 CoffeeList.Add(c1);
